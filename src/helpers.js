@@ -4,6 +4,9 @@ const generateRandomColor = () => {
   return `${existingBudgetLength * 34} 65% 50%`
 };
 
+// fake a delay to demo disabled button styles
+export const wait = () => new Promise(res => setTimeout(res, Math.random() * 1500))
+
 // Local storage
 export const fetchData = (key) => {
   return JSON.parse(localStorage.getItem(key));
