@@ -8,8 +8,13 @@ export async function logoutAction() {
     key: "userName",
   });
 
-  toast.success("You've delete your account!")
+  // delete the budgets
+  deleteItem({
+    key: "budgets",
+  });
+
+  toast.success("You've delete your account!");
 
   // return redirect
-  return redirect("/")
+  return redirect("/");
 }
