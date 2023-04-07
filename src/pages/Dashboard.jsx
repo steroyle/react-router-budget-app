@@ -1,6 +1,7 @@
 // helper functions
 import { useLoaderData } from "react-router-dom";
 import { fetchData } from "../helpers"
+import Intro from "../components/Intro";
 
 // loader
 export function dashboardLoader() {
@@ -16,8 +17,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <h1>{userName}</h1>
-      <div>Dashboard</div>
+      {userName ? <p>{userName}</p> : <Intro />}
     </>
   )
 }
