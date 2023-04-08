@@ -3,14 +3,14 @@ import { deleteItem } from "../helpers";
 import { toast } from "react-toastify";
 
 export async function logoutAction() {
-  // delete the user
   deleteItem({
     key: "userName",
   });
-
-  // delete the budgets
   deleteItem({
     key: "budgets",
+  });
+  deleteItem({
+    key: "expenses",
   });
 
   toast.success("You've delete your account!");

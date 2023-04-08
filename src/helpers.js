@@ -78,3 +78,8 @@ export const formatCurrency = (amount) => {
     currency: "GBP",
   });
 };
+
+// Format Date
+export const formatDateToLocaleString = (epoch) => (
+  new Date(epoch).toLocaleDateString()
+);
