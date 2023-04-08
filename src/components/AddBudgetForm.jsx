@@ -15,7 +15,7 @@ const AddBudgetForm = () => {
       formRef.current.reset();
       focusRef.current.focus();
     }
-  },[isSubmitting])
+  }, [isSubmitting]);
 
   return (
     <div className="form-wrapper">
@@ -61,8 +61,7 @@ const AddBudgetForm = () => {
                     <CurrencyPoundIcon width={20} />
                   </>
                 )
-          }
-          
+          }          
         </button>
       </fetcher.Form>
     </div>
