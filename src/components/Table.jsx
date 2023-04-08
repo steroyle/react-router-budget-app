@@ -1,13 +1,21 @@
 import ExpenseItem from "./ExpenseItem";
 
-const Table = ({ expenses }) => {
+const Table = ({ expenses, showBudget = true }) => {
+
+  let tableHeaders = ["Name", "Amount", "Date", ""];
+
+  // control whether to include "Budget in the list of <th>"
+  if(showBudget) {
+    tableHeaders.splice(3, 0, "Budget");
+  }
+
   return (
     <div className="table">
       <table>
         <thead>
           <tr>
             {
-              ["Name", "Amount", "Date", "Budget", ""].map((item, index) => (
+              tableHeaders.map((item, index) => (
                 <th key={index}>{item}</th>
               ))
             }
@@ -17,7 +25,7 @@ const Table = ({ expenses }) => {
           {
             expenses.map((expense) => (
               <tr key={expense.id}>
-                <ExpenseItem expense={expense} />
+                <ExpenseItem expense={expense} showBudget={showBudget} />
               </tr>
             ))
           }
